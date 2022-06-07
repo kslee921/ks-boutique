@@ -22,6 +22,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -30,6 +31,7 @@ spec:
     metadata:
       labels:
         app: emailservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -65,6 +67,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -78,6 +81,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -86,6 +90,7 @@ spec:
     metadata:
       labels:
         app: checkoutservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       containers:
@@ -134,6 +139,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -147,6 +153,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -155,6 +162,7 @@ spec:
     metadata:
       labels:
         app: recommendationservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -194,6 +202,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: recommendationservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -207,6 +216,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -215,6 +225,7 @@ spec:
     metadata:
       labels:
         app: frontend
+        namespace: ks-boutique
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -281,6 +292,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -294,6 +306,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-external
+  namespace: ks-boutique
 spec:
   type: LoadBalancer
   selector:
@@ -307,6 +320,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -315,6 +329,7 @@ spec:
     metadata:
       labels:
         app: paymentservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -350,6 +365,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -363,6 +379,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -371,6 +388,7 @@ spec:
     metadata:
       labels:
         app: productcatalogservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -408,6 +426,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -421,6 +440,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -429,6 +449,7 @@ spec:
     metadata:
       labels:
         app: cartservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -461,6 +482,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cartservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -474,6 +496,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadgenerator
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -525,6 +548,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -533,6 +557,7 @@ spec:
     metadata:
       labels:
         app: currencyservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -569,6 +594,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -582,6 +608,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -590,6 +617,7 @@ spec:
     metadata:
       labels:
         app: shippingservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       containers:
@@ -627,6 +655,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shippingservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -640,6 +669,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -648,6 +678,7 @@ spec:
     metadata:
       labels:
         app: redis-cart
+        namespace: ks-boutique
     spec:
       containers:
       - name: redis
@@ -680,6 +711,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-cart
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
@@ -693,6 +725,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
+  namespace: ks-boutique
 spec:
   selector:
     matchLabels:
@@ -701,6 +734,7 @@ spec:
     metadata:
       labels:
         app: adservice
+        namespace: ks-boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -740,6 +774,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: adservice
+  namespace: ks-boutique
 spec:
   type: ClusterIP
   selector:
